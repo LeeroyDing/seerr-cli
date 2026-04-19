@@ -57,3 +57,4 @@ go run main.go interactive
 - **IMDb Links**: Use `seerr add` with a direct IMDb link for the fastest way to request a specific item.
 - **Type Flag**: Always specify `--type movie` or `--type tv` when using `info` or `request` if prompted.
 - **Admin Key**: Ensure you are using an admin API key for `admin` subcommands.
+- **Command Help**: Use `seerr [command] --help` to see detailed instructions and examples for any command. The help messages are optimized for both humans and AI agents.
