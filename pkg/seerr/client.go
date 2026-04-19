@@ -1,3 +1,4 @@
+// Package seerr provides a client for interacting with the Seerr/Overseerr API.
 package seerr
 
 import (
@@ -11,12 +12,14 @@ import (
 	"strings"
 )
 
+// Client is the main entry point for the Seerr API.
 type Client struct {
 	BaseURL string
 	APIKey  string
 	HTTP    *http.Client
 }
 
+// SearchResult represents a single item found in a search or discovery flow.
 type SearchResult struct {
 	ID          int    `json:"id"`
 	MediaType   string `json:"mediaType"`
@@ -89,6 +92,7 @@ type RequestPayload struct {
 	Seasons   []int  `json:"seasons,omitempty"`
 }
 
+// NewClient creates a new Seerr API client.
 func NewClient(baseURL, apiKey string) *Client {
 	return &Client{
 		BaseURL: baseURL,
@@ -102,6 +106,7 @@ func (c *Client) getURL(path string) (*url.URL, error) {
 	return url.Parse(baseURL + path)
 }
 
+// Search performs a search query for movies and TV shows.
 func (c *Client) Search(query string) (*SearchResponse, error) {
 	u, err := c.getURL("/api/v1/search")
 	if err != nil {

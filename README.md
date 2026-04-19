@@ -5,6 +5,7 @@ A powerful, interactive command-line interface for Seerr and Overseerr. Manage y
 ## Features
 
 - 🚀 **Interactive Mode**: A menu-driven interface for seamless browsing (`seerr interactive`).
+- 🔗 **IMDb Integration**: Add media directly using an IMDb link or ID (`seerr add [link]`).
 - 🔍 **Media Discovery**: Search for movies and TV shows, or browse trending and popular content.
 - 📬 **Request Management**: Create, list, and cancel requests.
 - ℹ️ **Deep Insights**: View detailed metadata, ratings, and summaries for any media item.
@@ -44,6 +45,9 @@ You can also use traditional CLI commands:
 ```bash
 # Search for a movie
 seerr search "Inception"
+
+# Add directly via IMDb link
+seerr add https://www.imdb.com/title/tt1375666/
 
 # View details
 seerr info 27205 --type movie
