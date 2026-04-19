@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "seerr_cli",
+  "project_id": "fced9735-32ca-4fa3-b650-608594a4a9f6"
+}
