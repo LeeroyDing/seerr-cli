@@ -18,8 +18,9 @@ import (
 var listPendingCmd = &cobra.Command{
 	Use:   "list-pending",
 	Short: "List all pending requests",
-	Long: `Display a list of all requests waiting for approval.
-	
+	Long: `Display a comprehensive list of all media requests currently awaiting 
+approval. Includes request IDs for use with approve/deny commands.
+
 Example:
   seerr admin list-pending`,
 	Run: func(cmd *cobra.Command, args []string) {

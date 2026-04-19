@@ -17,10 +17,11 @@ import (
 var approveCmd = &cobra.Command{
 	Use:   "approve [requestID]",
 	Short: "Approve a media request",
-	Long: `Approve a pending request so it can be processed.
-	
+	Long: `Approve a specific pending request by its ID.
+Once approved, Seerr will process the request for download.
+
 Example:
-  seerr admin approve 1`,
+  seerr admin approve 123`,
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		requestID, err := strconv.Atoi(args[0])

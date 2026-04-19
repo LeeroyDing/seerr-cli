@@ -13,13 +13,13 @@ import (
 // adminCmd represents the admin command
 var adminCmd = &cobra.Command{
 	Use:   "admin",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "Administrative tasks for managing requests",
+	Long: `Perform administrative actions like approving, denying, or listing pending requests.
+Requires an admin API key for these operations.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+Example:
+  seerr admin list-pending
+  seerr admin approve 123`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("admin called")
 	},

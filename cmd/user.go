@@ -16,8 +16,9 @@ import (
 var userCmd = &cobra.Command{
 	Use:   "user",
 	Short: "Show your Seerr user profile",
-	Long: `Display information about your account, including permissions and request count.
-	
+	Long: `Display information about your Seerr user account, including your
+username, email, and permissions.
+
 Example:
   seerr user`,
 	Run: func(cmd *cobra.Command, args []string) {

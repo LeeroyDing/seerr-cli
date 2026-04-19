@@ -17,10 +17,12 @@ import (
 var requestCmd = &cobra.Command{
 	Use:   "request [id]",
 	Short: "Request a movie or TV show",
-	Long: `Request media by its ID from Seerr.
-	
+	Long: `Submit a request for a specific media item by its ID. 
+Requires the item ID and type flag.
+
 Example:
-  seerr request 12345 --type movie`,
+  seerr request 27205 --type movie
+  seerr request 1399 --type tv`,
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		mediaID, err := strconv.Atoi(args[0])

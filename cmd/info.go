@@ -18,10 +18,12 @@ import (
 var infoCmd = &cobra.Command{
 	Use:   "info [id]",
 	Short: "Show detailed information about a movie or TV show",
-	Long: `Display summary, ratings, and other metadata for a specific media item.
-	
+	Long: `Display detailed metadata for a specific media item, including its
+summary, release date, ratings, and status. Requires the item ID and type.
+
 Example:
-  seerr info 12345 --type movie`,
+  seerr info 27205 --type movie
+  seerr info 1399 --type tv`,
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		mediaID, err := strconv.Atoi(args[0])

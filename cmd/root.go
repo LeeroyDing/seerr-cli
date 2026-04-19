@@ -17,13 +17,15 @@ var cfgFile string
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
 	Use:   "seerr",
-	Short: "A CLI tool for Seerr (media request manager)",
-	Long: `seerr-cli is a command-line interface for Seerr/Overseerr.
-It allows you to search for media and request it directly from your terminal.
+	Short: "A powerful, interactive command-line interface for Seerr and Overseerr",
+	Long: `seerr-cli is a full-featured command-line interface for Seerr/Overseerr.
+It allows you to discover media, manage requests, and handle administrative tasks
+directly from your terminal.
 
 Example:
   seerr search "Inception"
-  seerr request 12345`,
+  seerr interactive
+  seerr config --url https://seerr.example.com --api-key YOUR_KEY`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },

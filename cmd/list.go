@@ -18,8 +18,9 @@ import (
 var listCmd = &cobra.Command{
 	Use:   "list",
 	Short: "List your media requests",
-	Long: `Display a list of your pending and approved requests.
-	
+	Long: `Display a list of all media requests you have submitted, 
+showing their status (Pending, Approved, etc.) and IDs.
+
 Example:
   seerr list`,
 	Run: func(cmd *cobra.Command, args []string) {

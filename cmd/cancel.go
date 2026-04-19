@@ -17,10 +17,11 @@ import (
 var cancelCmd = &cobra.Command{
 	Use:   "cancel [requestID]",
 	Short: "Cancel a media request",
-	Long: `Stop a pending or approved request.
-	
+	Long: `Cancel a specific media request using its request ID.
+You can find the request ID using the 'list' command.
+
 Example:
-  seerr cancel 1`,
+  seerr cancel 123`,
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		requestID, err := strconv.Atoi(args[0])

@@ -18,7 +18,8 @@ var addCmd = &cobra.Command{
 	Use:   "add [imdbLinkOrID]",
 	Short: "Add a movie or show using an IMDb link or ID",
 	Long: `Quickly add media to Seerr by providing its IMDb URL or ID.
-	
+The tool will look up the item and submit a request automatically.
+
 Example:
   seerr add https://www.imdb.com/title/tt0111161/
   seerr add tt0111161`,

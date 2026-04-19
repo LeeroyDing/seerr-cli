@@ -14,11 +14,12 @@ import (
 // configCmd represents the config command
 var configCmd = &cobra.Command{
 	Use:   "config",
-	Short: "Configure Seerr CLI",
-	Long: `Set the Seerr instance URL and API Key.
-	
+	Short: "Configure Seerr CLI settings",
+	Long: `Set the Seerr/Overseerr instance URL and API Key for the CLI to use.
+Settings are saved to the config file (default $HOME/.seerr.yaml).
+
 Example:
-  seerr config --url https://seerr.example.com --api-key your-api-key`,
+  seerr config --url https://seerr.example.com --api-key YOUR_API_KEY`,
 	Run: func(cmd *cobra.Command, args []string) {
 		url, _ := cmd.Flags().GetString("url")
 		apiKey, _ := cmd.Flags().GetString("api-key")

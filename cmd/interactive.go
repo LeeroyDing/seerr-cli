@@ -18,8 +18,10 @@ import (
 var interactiveCmd = &cobra.Command{
 	Use:   "interactive",
 	Short: "Launch interactive mode",
-	Long: `Start a menu-driven session to browse and manage your Seerr instance.
-	
+	Long: `Start a menu-driven interactive interface for browsing, searching, 
+and requesting media. This is the recommended way for most users to interact 
+with the tool.
+
 Example:
   seerr interactive`,
 	Run: func(cmd *cobra.Command, args []string) {

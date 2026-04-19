@@ -19,10 +19,12 @@ import (
 var searchCmd = &cobra.Command{
 	Use:   "search [query]",
 	Short: "Search for movies or TV shows",
-	Long: `Search for media on your Seerr instance.
-	
+	Long: `Search for media items on your Seerr instance by title or keyword.
+Displays a list of results with their IDs, which can be used for 'info' or 'request' commands.
+
 Example:
-  seerr search "Inception"`,
+  seerr search "Inception"
+  seerr search "The Boys"`,
 	Args: cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		query := strings.Join(args, " ")

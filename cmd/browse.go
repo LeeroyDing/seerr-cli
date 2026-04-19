@@ -19,7 +19,8 @@ var browseCmd = &cobra.Command{
 	Use:   "browse [trending|movies|tv]",
 	Short: "Browse trending or popular media",
 	Long: `Discover new content by browsing trending items or popular movies and TV shows.
-	
+Valid sub-categories are 'trending', 'movies', or 'tv'.
+
 Example:
   seerr browse trending
   seerr browse movies`,

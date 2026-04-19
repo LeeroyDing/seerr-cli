@@ -17,10 +17,11 @@ import (
 var denyCmd = &cobra.Command{
 	Use:   "deny [requestID]",
 	Short: "Deny a media request",
-	Long: `Decline a pending request.
-	
+	Long: `Deny a specific pending request by its ID.
+The request will be rejected and removed from the pending list.
+
 Example:
-  seerr admin deny 1`,
+  seerr admin deny 123`,
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		requestID, err := strconv.Atoi(args[0])

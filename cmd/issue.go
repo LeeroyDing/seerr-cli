@@ -16,12 +16,13 @@ import (
 
 // issueCmd represents the issue command
 var issueCmd = &cobra.Command{
-	Use:   "issue [mediaID]",
+	Use:   "issue [id]",
 	Short: "Report an issue with a media item",
-	Long: `Create a report for a specific media item (e.g., video or audio problems).
-	
+	Long: `Report a problem (e.g., missing episodes, bad quality) for a specific 
+media item by its ID. Requires the item ID and type flag.
+
 Example:
-  seerr issue 12345 --type video --message "The video is buffering too much"`,
+  seerr issue 27205 --type movie --message "The video is buffering too much"`,
 	Args: cobra.ExactArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		mediaID, err := strconv.Atoi(args[0])
