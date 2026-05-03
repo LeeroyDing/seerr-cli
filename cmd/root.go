@@ -14,10 +14,13 @@ import (
 
 var cfgFile string
 
+var Version = "dev"
+
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "seerr",
-	Short: "A powerful, interactive command-line interface for Seerr and Overseerr",
+	Use:     "seerr",
+	Version: Version,
+	Short:   "A powerful, interactive command-line interface for Seerr and Overseerr",
 	Long: `seerr-cli is a full-featured command-line interface for Seerr/Overseerr.
 It allows you to discover media, manage requests, and handle administrative tasks
 directly from your terminal.
