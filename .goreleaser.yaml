@@ -45,3 +45,14 @@ changelog:
     exclude:
       - '^docs:'
       - '^test:'
+
+brews:
+  - repository:
+      owner: LeeroyDing
+      name: homebrew-packages
+    directory: Formula
+    homepage: "https://github.com/LeeroyDing/seerr-cli"
+    description: "Command-line interface for Seerr and Overseerr media managers"
+    license: "MIT"
+    install: |-
+      bin.install "seerr-cli" => "seerr"
