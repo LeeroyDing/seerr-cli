@@ -13,6 +13,7 @@ import (
 )
 
 var cfgFile string
+var outputFormat string
 
 var Version = "dev"
 
@@ -50,11 +51,38 @@ func init() {
 	// Cobra supports persistent flags, which, if defined here,
 	// will be global for your application.
 
-		rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.seerr.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.seerr.yaml)")
+	rootCmd.PersistentFlags().StringVarP(&outputFormat, "output", "o", "text", "Output format (text, json)")
+	viper.BindPFlag("output", rootCmd.PersistentFlags().Lookup("output"))
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
+	originalHelp := rootCmd.HelpFunc()
+	rootCmd.SetHelpFunc(func(c *cobra.Command, args []string) {
+		format := viper.GetString("output")
+		isJson := format == "json" || c.Flag("output").Value.String() == "json"
+		
+		if !isJson {
+			for i, arg := range os.Args {
+				if arg == "--output=json" || arg == "-o=json" {
+					isJson = true
+					break
+				}
+				if (arg == "--output" || arg == "-o") && i+1 < len(os.Args) && os.Args[i+1] == "json" {
+					isJson = true
+					break
+				}
+			}
+		}
+
+		if isJson {
+			printJSONHelp(c)
+		} else {
+			originalHelp(c, args)
+		}
+	})
 }
 
 // initConfig reads in config file and ENV variables if set.
